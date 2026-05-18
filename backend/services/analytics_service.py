@@ -5,6 +5,9 @@ def calculate_weekly_usage():
 
     data = load_data()
 
+    consumption_df = data["consumption"]
+
     return {
-        "message": "analytics service working"
+        "columns": consumption_df.columns.tolist(),
+        "sample_rows": consumption_df.head(5).to_dict(orient="records")
     }
